@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	{% load static %}
+<title>TRIP PLANNER</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+<link href="{% static 'css/style1.css' %}" rel='stylesheet' type='text/css' />
+    
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!--<script src="js/jquery.easydropdown.js"></script>-->
+<!--start slider -->
+<link rel="stylesheet" href="{% static 'css/fwslider.css' %}" media="all">
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'js/fwslider.js' %}"></script>
+<!--end slider -->
+
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="row">
+			  <div class="col-md-12">
+				 <div class="header-left">
+					 <div class="logo">
+						<a href="/myapp/index/"><img src="{% static 'images/logo.png' %}" alt=""/></a>
+					 </div>
+					 <div class="menu">
+						    <ul class="nav" id="nav">
+
+								<li><a href="/myapp/loggedin/">Home</a></li>
+						    	<li class="current"><a href="/myapp/packages/">Tour Packages</a></li>
+								<li><a href="/myapp/hotdeals/">Hot Deals</a></li>
+                                <li><a href="/myapp/contact/">Contact Us</a></li>
+								<li><a href="/myapp/index/">Logout</a></li>
+
+								<div class="clear"></div>
+							</ul>
+					 </div>
+	    		    <div class="clear"></div>
+	    	    </div>
+	            <div class="header_right">
+					<div class="clear"></div>
+		           <div class="clear"></div>
+	       </div>
+	      </div>
+		 </div>
+	    </div>
+	  </div>
+
+
+
+
+  <section class="form" style="padding:50px; line-height:30px;">
+
+	<div class="container">
+      <form action="{% url 'payments' %}" method="POST">
+      	 {% csrf_token %}
+        <div class="row">
+            <div class="col-sm-6">
+	            <h3>Billing Address</h3>
+
+	            <label for="email"><i class="fa fa-envelope"></i> Email</label><br>
+	            <input type="email" id="email" name="email" placeholder="abc@xyz.com">
+            </div>
+		    <div class="col-sm-6">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+                    <div class="social">
+                  		<i class="fab fa-cc-visa fa-3x" style="color: green"></i>
+                      	<i class="fab fa-cc-amex fa-3x" style="color:blue;"></i>
+                      	<i class="fab fa-cc-mastercard fa-3x" style="color:red;"></i>
+                      	<i class="fab fa-cc-discover fa-3x" style="color:orange;"></i>
+                      <br>
+            <label for="cname">Name on Card</label><br>
+            <input type="text" id="cname" name="name" placeholder="Name" required><br>
+            <label for="ccnum">Credit card number</label><br>
+            <input type="number" id="ccnum" name="card_num" placeholder="xxxx-xxxx-xxxx-xxxx" required><br>
+            <label for="expmonth">Exp Month</label><br>
+            <input type="text" id="expmonth" name="month" placeholder="Month" required><br>
+            <label for="expyear">Exp Year</label><br>
+            <input type="number" id="expyear" name="year" placeholder="Year" required><br>
+            <label for="cvv">CVV</label><br>
+            <input type="number" id="cvv" name="cvv" placeholder="xxx" required><br>
+            <label for="pck_id">Package ID</label><br>
+            <input type="number" id="pck_id" name="pck_id" required><br>
+                      <br>
+      				</div>
+    		</div>
+    	</div>
+	    	<button type = "submit">BOOK NOW</button>
+    </form>
+
+</div>
+	  	  
+<p id="demo"></p>
+
+  </section>
+
+        <div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>QUICK LINKS</h4>
+							<li><a href="/myapp/loggedin/">HOME</a></li>
+							<li><a href="/myapp/contact/">ABOUT US</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>Destinations</h4>
+							<li><a href="/myapp/varanasi/">VARANASI</a></li>
+							<li><a href="/myapp/rajasthan/">RAJASTHAN</a></li>
+							<li><a href="/myapp/kashmir/">KASHMIR</a></li>
+							<li><a href="/myapp/manali/">MANALI</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>Customer Support</h4>
+							<li><a href="/myapp/contact/">CONTACT US</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<ul class="footer_box">
+							<h4>Newsletter</h4>
+							<div class="footer_search">
+				    		   <form>
+				    			<input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
+				    			<input type="submit" value="Go">
+				    		   </form>
+					        </div>
+							<ul class="social">
+							  <li class="facebook"><a href="https://www.facebook.com" target="_blank"><span> </span></a></li>
+							  <li class="twitter"><a href="https://www.twitter.com" target="_blank"><span> </span></a></li>
+							  <li class="instagram"><a href="https://www.instagram.com" target="_blank"><span> </span></a></li>
+							  <li class="pinterest"><a href="https://www.pinterest.com" target="_blank"><span> </span></a></li>
+							  <li class="youtube"><a href="https://www.youtube.com" target="_blank"><span> </span></a></li>
+
+						    </ul>
+		   				</ul>
+					</div>
+				</div>
+				<div class="row footer_bottom">
+				    <div class="copy">
+			            <p>© ak038. All rights reserved</p>
+		            </div>
+   				</div>
+			</div>
+		</div>
+</body>
+</html>
